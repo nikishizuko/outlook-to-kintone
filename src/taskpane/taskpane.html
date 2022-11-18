@@ -1,0 +1,65 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Outlook to Kintone Add-in</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+
+    <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Template styles -->
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+  <section class="settings-header">
+    <span id="settings-open-icon" class="material-symbols-outlined">settings</span>
+    <span id="settings-close-icon" class="material-symbols-outlined">close</span>
+  </section>
+  <section id="settings-section">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter">
+      <h1 class="ms-font-l">Outlook to Kintone Settings</h1>
+    </header>
+    <div class="centered-settings">
+      <div id="settings-body" class="settings-section">
+        <label for="webhook-url">Webhook URL</label><br>
+        <input type="text" id="webhook-url" name="webhook-url"></input>
+      </div>
+      <p><label id="save-message"></label></p>
+      <div role="button" id="save-settings" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+        <span class="ms-Button-label">Save</span>
+      </div>
+    </div>
+  </section>
+  <section id="kintone-send-section">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter">
+      <h1 class="ms-font-l">Paste body text to send to Kintone</h1>
+    </header>
+    <section id="sideload-msg" class="ms-welcome__main">
+      <h2 class="ms-font-xl">Please sideload your add-in to see app body.</h2>
+    </section>
+    <main id="app-body" class="ms-welcome__main">
+      <textarea id="body-text" title="body-text" name="body-text"></textarea>
+      <p><label id="sent-message"></label></p>
+      <div role="button" id="send-data" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+        <span class="ms-Button-label">Send</span>
+      </div>
+    </main>
+  </section>
+  
+</body>
+
+</html>
